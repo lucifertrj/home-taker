@@ -62,6 +62,7 @@ Create a `.env` file in the project root:
 
 ```bash
 # OpenAI API Key
+LLM_API_KEY=your_openai_api_key
 OPENAI_API_KEY=your_openai_api_key
 
 # Qdrant Cloud Configuration
