@@ -19,6 +19,24 @@ class ChatRequest(BaseModel):
     message: str
 
 
+class RAGChatRequest(BaseModel):
+    message: str
+    file_id: str | None = None
+    top_k: int = 5
+
+
+class FileUploadResponse(BaseModel):
+    success: bool
+    message: str
+    file_id: str
+    chunks_count: int
+
+
+class RAGChatResponse(BaseModel):
+    response: str
+    sources: list[dict[str, Any]] | None = None
+
+
 class APIResponse(BaseModel):
     success: bool
     message: str

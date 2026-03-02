@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.config import API_TITLE, API_VERSION, CORS_ORIGINS
-from backend.routes import chat_router, logs_router, preferences_router
+from backend.routes import chat_router, logs_router, preferences_router, rag_router
 
 app = FastAPI(title=API_TITLE, version=API_VERSION)
 
@@ -19,6 +19,7 @@ app.add_middleware(
 app.include_router(preferences_router)
 app.include_router(logs_router)
 app.include_router(chat_router)
+app.include_router(rag_router)
 
 
 @app.get("/")
